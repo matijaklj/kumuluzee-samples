@@ -1,0 +1,20 @@
+kumuluzee:
+  name: metrics-sample
+  version: 1.0.0
+  env:
+    name: dev
+  metrics:
+    logstash:
+      enabled: false
+      address: 127.0.0.1
+      port: 5043
+      period-s: 15
+    logs:
+      enabled: false
+      period-s: 30
+      level: INFO
+    web-instrumentation:
+      - name: metricsEndpoint
+        url-pattern: /metrics/*
+      - name: customersEndpoint
+        url-pattern: /v1/customers/*

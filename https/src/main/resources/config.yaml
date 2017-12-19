@@ -1,0 +1,9 @@
+# example HTTPS configuration
+
+kumuluzee:
+  server:
+    https:
+      enabled: true
+      keystore-path: \<path_to_project\>/src/main/resources/keystore.jks
+      keystore-password: changeit
+      key-password: changeit
