@@ -2,7 +2,7 @@ kumuluzee:
   streaming:
     kafka:
       producer:
-        bootstrap-servers: 172.17.0.3:9092
+        bootstrap-servers: 172.19.0.1:32784
         acks: all
         retries: 0
         batch-size: 16384

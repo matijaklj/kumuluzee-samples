@@ -17,7 +17,7 @@
 
     <properties>
         <kumuluzee-streaming-kafka.version>1.0.0-SNAPSHOT</kumuluzee-streaming-kafka.version>
-        <kafka.version>1.0.0</kafka.version>
+        <kafka.version>2.0.0</kafka.version>
     </properties>
 
     <modules>

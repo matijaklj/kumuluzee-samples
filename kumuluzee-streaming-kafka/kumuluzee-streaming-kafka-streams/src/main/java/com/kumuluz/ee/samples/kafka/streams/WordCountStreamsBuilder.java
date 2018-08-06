@@ -24,9 +24,7 @@ package com.kumuluz.ee.samples.kafka.streams;
 import com.kumuluz.ee.streaming.common.annotations.StreamProcessor;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;
-import org.apache.kafka.streams.Consumed;
 import org.apache.kafka.streams.StreamsBuilder;
-import org.apache.kafka.streams.kstream.*;
 import javax.enterprise.context.ApplicationScoped;
 import java.util.Arrays;
 
@@ -44,11 +42,11 @@ public class WordCountStreamsBuilder {
         // Serializers/deserializers (serde) for String and Long types
         final Serde<String> stringSerde = Serdes.String();
         final Serde<Long> longSerde = Serdes.Long();
-
+        /*
         // Construct a `KStream` from the input topic "streams-plaintext-input", where message values
         // represent lines of text (for the sake of this example, we ignore whatever may be stored
         // in the message keys).
-        KStream<String, String> textLines = builder.stream("input",
+        KStream<String, String> textLines = builder.stream("topic",
                     Consumed.with(stringSerde, stringSerde));
 
         KTable<String, Long> wordCounts = textLines
@@ -60,8 +58,9 @@ public class WordCountStreamsBuilder {
                     .count();
 
         // Store the running counts as a changelog stream to the output topic.
-        wordCounts.toStream().to("output", Produced.with(stringSerde, longSerde));
-
+        wordCounts.toStream().to("output2", Produced.with(stringSerde, longSerde));
+        */
+        builder.stream("input").to("output");
         return builder;
 
     }

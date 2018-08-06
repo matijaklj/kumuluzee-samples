@@ -1,8 +1,11 @@
 kumuluzee:
+  server:
+    http:
+      port: 8800
   streaming:
     kafka:
       streams:
-        bootstrap-servers: 172.17.0.3:9092
+        bootstrap-servers: 172.19.0.1:32784
         application-id: sample-word-count
         default-key-serde: org.apache.kafka.common.serialization.Serdes$StringSerde
         default-value-serde: org.apache.kafka.common.serialization.Serdes$StringSerde
